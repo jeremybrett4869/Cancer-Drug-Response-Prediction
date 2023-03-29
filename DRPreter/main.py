@@ -40,7 +40,7 @@ def main():
     args = arg_parse()
     args.device = 'cuda:{}'.format(args.device)
     rpath = './'
-    result_path = rpath + 'Result_0308/Result_4/' ### Adjust folder name
+    result_path = rpath + 'Result/Result_4/' ### Adjust folder name
     
     print(f'seed: {args.seed}')
     set_random_seed(args.seed)
@@ -114,7 +114,7 @@ def main():
 
         ### Adjust directory
         # state_dict_name = f'{rpath}weights/weight_sim_seed{args.seed}.pth' if args.sim==True else f'{rpath}weights/weight_seed{args.seed}.pth'
-        state_dict_name = f'{rpath}weights_0308/weights_4/weight_sim_seed{args.seed}.pth' if args.sim==True else f'{rpath}weights_0308/weights_4/weight_seed{args.seed}.pth'
+        state_dict_name = f'{rpath}weights/weights_4/weight_sim_seed{args.seed}.pth' if args.sim==True else f'{rpath}weights/weights_4/weight_seed{args.seed}.pth'
         stopper = EarlyStopping(mode='lower', patience=args.patience, filename=state_dict_name)
 
         for epoch in range(1, args.epochs + 1):
@@ -162,7 +162,7 @@ def main():
         result_type = 'results_sim' if args.sim==True else 'results'
         ### Adjust directory
         # state_dict_name = f'{rpath}weights/weight_sim_seed{args.seed}.pth' if args.sim==True else f'{rpath}weights/weight_seed{args.seed}.pth'
-        state_dict_name = f'{rpath}weights_0308/weights_4/weight_sim_seed{args.seed}.pth' if args.sim==True else f'{rpath}weights_0308/weights_4/weight_seed{args.seed}.pth'
+        state_dict_name = f'{rpath}weights/weights_4/weight_sim_seed{args.seed}.pth' if args.sim==True else f'{rpath}weights/weights_4/weight_seed{args.seed}.pth'
         model.load_state_dict(torch.load(rpath + state_dict_name, map_location=args.device)['model_state_dict'])
 
 

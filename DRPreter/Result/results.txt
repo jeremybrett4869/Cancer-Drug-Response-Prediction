@@ -1,0 +1,7 @@
+Result_1 mut
+Result_2 cnv
+Result_3 comb
+Result_4 seg_cnv
+Result_5 seg_comb
+Result_6 seg_cnv tuning
+Result_7 seg_comb tuning
